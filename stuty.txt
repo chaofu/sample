@@ -1,0 +1,4 @@
+##
+npm run watch-poll  与 npm run watch-poll &
+第一个在当前窗口执行 和 npm run watch-poll &  后台运行
+区别第一个 开着 做不了其他事情，第二个 你想其他事情都可以
