@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -47,6 +48,7 @@ class UsersController extends Controller
         ]);
         //session 保存session 因为是http协议是无状态的 所以 Laravel 提供了一种用于临时保存用户数据的方法 - 会话（Session），
         //并附带支持多种会话后端驱动，可通过统一的 API 进行使用。
+        Auth::login($user); //自动登录 注册成功
         session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
         return redirect()->route('users.show',[$user]);
     }
